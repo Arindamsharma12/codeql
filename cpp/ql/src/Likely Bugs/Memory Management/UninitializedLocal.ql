@@ -89,5 +89,6 @@ from
 where
   conf.hasFlowPath(source, sink) and
   isSinkImpl(sink.getInstruction(), va) and
-  v = va.getTarget()
+  v = va.getTarget() and
+  not exists(ErrorExpr e | e.getEnclosingFunction() = v.getFunction())
 select va, source, sink, "The variable $@ may not be initialized at this access.", v, v.getName()

@@ -1,0 +1,4 @@
+edges
+nodes
+| test.cpp:5:9:5:9 | definition of x | semmle.label | definition of x |
+#select
